@@ -1,0 +1,1 @@
+vida = 120; // quantos passos a bala dura

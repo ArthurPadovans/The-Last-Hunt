@@ -69,6 +69,7 @@
     {"id":{"name":"spr_player_pernas","path":"sprites/spr_player_pernas/spr_player_pernas.yy",},},
     {"id":{"name":"spr_player_revolver","path":"sprites/spr_player_revolver/spr_player_revolver.yy",},},
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},
+    {"id":{"name":"spr_teste_pinto","path":"sprites/spr_teste_pinto/spr_teste_pinto.yy",},},
     {"id":{"name":"srp_menu_titulo","path":"sprites/srp_menu_titulo/srp_menu_titulo.yy",},},
   ],
   "resourceType":"GMProject",

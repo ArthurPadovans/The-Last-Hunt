@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_arma_chao",
-    "path":"sprites/spr_arma_chao/spr_arma_chao.yy",
+    "name":"srp_espingarda",
+    "path":"sprites/srp_espingarda/srp_espingarda.yy",
   },
   "spriteMaskId":null,
   "visible":true,

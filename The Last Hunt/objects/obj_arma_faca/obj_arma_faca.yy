@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_arma_chao",
-    "path":"sprites/spr_arma_chao/spr_arma_chao.yy",
+    "name":"spr_faca",
+    "path":"sprites/spr_faca/spr_faca.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_arma_chao",
-    "path":"sprites/spr_arma_chao/spr_arma_chao.yy",
+    "name":"spr_revolver",
+    "path":"sprites/spr_revolver/spr_revolver.yy",
   },
   "spriteMaskId":null,
   "visible":true,

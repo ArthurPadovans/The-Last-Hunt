@@ -68,7 +68,7 @@ if (mouse_check_button_pressed(mb_left) && !recarregando && cooldown <= 0) {
         bala.image_angle = image_angle;
         bala.speed = 12;
         municao -= 1;
-		tremer (2);
+        tremer(2);
         cooldown = 10;
     }
     // ESPINGARDA: 5 projéteis em leque, alcance curto
@@ -79,21 +79,45 @@ if (mouse_check_button_pressed(mb_left) && !recarregando && cooldown <= 0) {
             projetil.direction = angulo;
             projetil.image_angle = angulo;
             projetil.speed = 10;
-            projetil.vida = 35;
+            projetil.vida = 25;
         }
         municao -= 1;
-		tremer (6);
+        tremer(6);
         cooldown = 35;
     }
-    // FACA: acerta quem está perto, na frente
+    // FACA: golpe largo na frente, acerta todos na área
     else if (arma == 2) {
-        var fx = x + lengthdir_x(30, image_angle);
-        var fy = y + lengthdir_y(30, image_angle);
-        var alvo = collision_circle(fx, fy, 25, obj_inimigo, false, true);
-        if (alvo != noone && !collision_line(x, y, alvo.x, alvo.y, obj_parede, false, true)) {
-                       efeito_morte(alvo.x, alvo.y, image_angle, alvo.sprite_index);
-            instance_destroy(alvo);
+        var alcance_faca = 50;   // a que distância, na frente do jogador, fica o centro do golpe
+        var raio_faca = 50;      // tamanho da área do golpe
+
+        // Pequeno avanço para a frente ao golpear (se não tiver parede)
+        var lx = lengthdir_x(12, image_angle);
+        var ly = lengthdir_y(12, image_angle);
+        if (!place_meeting(x + lx, y + ly, obj_parede)) {
+            x += lx;
+            y += ly;
         }
+
+        // Acerta todos os inimigos dentro da área (menos os que estão atrás de parede)
+        var fx = x + lengthdir_x(alcance_faca, image_angle);
+        var fy = y + lengthdir_y(alcance_faca, image_angle);
+        with (obj_inimigo) {
+            if (point_distance(x, y, fx, fy) < raio_faca) {
+                if (!collision_line(other.x, other.y, x, y, obj_parede, false, true)) {
+                    efeito_morte(x, y, other.image_angle, sprite_index);
+                    pontuar(x, y, 150);
+                    instance_destroy();
+                }
+            }
+        }
+
+        // O corte em arco na tela
+        var corte = instance_create_layer(x, y, "Instances", obj_corte);
+        corte.dono = id;
+        corte.ang = image_angle;
+        corte.raio_arco = alcance_faca + 15;
+
+        tremer(3);
         cooldown = 20;
     }
 }
@@ -108,8 +132,25 @@ var dx = x - xprevious;   // quanto ele andou desde o passo anterior
 var dy = y - yprevious;
 andando = (dx != 0 || dy != 0);
 
+var ciclo = max(1, sprite_get_number(spr_player_pernas) - 1);   // quadros do ciclo de andar
+
 if (andando) {
-    pernas_frame += 0.3;   // velocidade do passo (maior = pernas mais rápidas)
+    // Quanto do movimento foi "para frente" (na direção do mouse)?
+    var frente = dx * lengthdir_x(1, image_angle) + dy * lengthdir_y(1, image_angle);
+
+    if (frente < -0.5) {
+        pernas_frame -= 0.3;   // andando de costas: toca ao contrário
+    } else {
+        pernas_frame += 0.3;   // para frente ou de lado: toca normal
+    }
+
+    // Mantém o contador dentro do ciclo
+    if (pernas_frame >= ciclo) {
+        pernas_frame -= ciclo;
+    }
+    if (pernas_frame < 0) {
+        pernas_frame += ciclo;
+    }
 } else {
     pernas_frame = 0;
 }

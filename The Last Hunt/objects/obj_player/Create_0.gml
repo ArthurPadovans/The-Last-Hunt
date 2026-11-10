@@ -1,6 +1,6 @@
 velocidade = 4.5;
 
-arma = 0;   // arma na mão: 0 = revolver, 1 = espingarda, 2 = faca
+arma = 2;   // arma na mão: 0 = revolver, 1 = espingarda, 2 = faca
 nome_arma = ["Revolver", "Espingarda", "Faca"];
 max_municao = [6, 2, 0];   // capacidade de cada arma
 municao = max_municao[arma];   // munição da arma que está na mão

@@ -21,3 +21,6 @@ if (tremor > 0.3) {
 }
 
 camera_set_view_pos(camera, cam_x + tx, cam_y + ty);
+
+// Balanço lento: a câmera gira um pouquinho para um lado e para o outro
+camera_set_view_angle(camera, sin(current_time / balanco_vel) * balanco_forca);

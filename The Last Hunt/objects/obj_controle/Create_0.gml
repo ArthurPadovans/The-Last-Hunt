@@ -18,6 +18,18 @@ view_camera[0] = camera;
 view_wport[0] = 1280;
 view_hport[0] = 720;
 
-cam_x = 0;
+cam_x = 0;     // posição "de verdade" da câmera, sem tremida
 cam_y = 0;
-tremor = 0;
+tremor = 0;    // força da tremida atual
+
+// Balanço lento da câmera (como no Hotline Miami)
+balanco_forca = 2.5;   // quantos graus ela gira para cada lado (0 = sem balanço)
+balanco_vel = 2500;    // maior = balança mais devagar
+
+// ---------- FUNDO DE FORA DO MAPA ----------
+// Esconde o fundo preto padrão da sala e coloca o degradê colorido no lugar
+var bg = layer_get_id("Background");
+if (layer_exists(bg)) {
+    layer_set_visible(bg, false);
+}
+instance_create_depth(0, 0, 20000, obj_fundo_externo);

@@ -2,7 +2,7 @@ view_enabled = false;   // esta sala não usa a câmera que segue o jogador
 depth = -100;
 
 // ---------- NOMES (troque aqui, se quiser) ----------
-var gangue = "Abutres";
+var gangue = "Red Jays";
 var lider = "Silas Mercer";
 
 titulo_site = "Charles Logan";

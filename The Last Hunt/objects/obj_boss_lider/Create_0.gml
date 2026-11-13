@@ -15,3 +15,7 @@ recarga_dinamite = 200;  // tempo até a próxima dinamite
 lado = choose(-1, 1);    // para que lado ele desvia
 tempo_lado = 90;         // de quanto em quanto tempo ele troca de lado
 piscar = 0;              // para piscar vermelho ao levar tiro
+
+// ---------- FIM DA LUTA ----------
+derrotado = false;       // vira true quando a vida zera (ele cai de joelhos, mas não morre)
+contador_fim = 0;        // tempo até começar o duelo final

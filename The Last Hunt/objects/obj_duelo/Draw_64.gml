@@ -1,19 +1,25 @@
 var w = display_get_gui_width();
 var h = display_get_gui_height();
 
+// Tremida do cenário
+var ox = random_range(-sac, sac);
+var oy = random_range(-sac, sac);
+
 // ---------- CENÁRIO (provisório, depois vira pixel art) ----------
 draw_set_color(make_color_rgb(235, 170, 100));   // céu
-draw_rectangle(0, 0, w, h * 0.6, false);
+draw_rectangle(-40 + ox, -40 + oy, w + 40 + ox, h * 0.6 + oy, false);
 draw_set_color(make_color_rgb(170, 120, 70));    // chão
-draw_rectangle(0, h * 0.6, w, h, false);
+draw_rectangle(-40 + ox, h * 0.6 + oy, w + 40 + ox, h + 40 + oy, false);
 
-// Inimigo, de frente
+// Inimigo, de frente (afunda quando cai)
+var topo_inimigo = lerp(h * 0.30, h * 0.62, queda_inimigo);
 draw_set_color(make_color_rgb(120, 30, 30));
-draw_rectangle(w * 0.40, h * 0.30, w * 0.50, h * 0.75, false);
+draw_rectangle(w * 0.40 + ox, topo_inimigo + oy, w * 0.50 + ox, h * 0.75 + oy, false);
 
-// Você, de costas, na frente
+// Você, de costas, na frente (afunda quando cai)
+var topo_jogador = lerp(h * 0.50, h * 0.86, queda_jogador);
 draw_set_color(make_color_rgb(30, 40, 90));
-draw_rectangle(w * 0.12, h * 0.50, w * 0.26, h, false);
+draw_rectangle(w * 0.12 + ox, topo_jogador + oy, w * 0.26 + ox, h + 40 + oy, false);
 
 // ---------- RELÓGIO, NO CANTO DIREITO ----------
 var cx = w - 190;
@@ -48,7 +54,15 @@ draw_circle(cx, cy, 8, false);
 // ---------- CLARÃO DO TIRO ----------
 if (flash > 0) {
     draw_set_alpha(flash);
-    draw_set_color(c_white);
+    draw_set_color(flash_cor);
+    draw_rectangle(0, 0, w, h, false);
+    draw_set_alpha(1);
+}
+
+// ---------- TELA AVERMELHADA (depois que Charles é atingido) ----------
+if (vermelho > 0) {
+    draw_set_alpha(vermelho);
+    draw_set_color(c_red);
     draw_rectangle(0, 0, w, h, false);
     draw_set_alpha(1);
 }
@@ -59,8 +73,12 @@ draw_set_valign(fa_middle);
 
 if (estado == 0) {
     draw_set_color(c_white);
-    draw_text_transformed(w / 2, h * 0.12, "O DUELO VAI COMECAR", 3, 3, 0);
-    draw_text(w / 2, h * 0.20, "Quando o ponteiro bater MEIO-DIA, aperte o botao ESQUERDO do mouse!");
+    if (eh_final) {
+        draw_text_transformed(w / 2, h * 0.12, "O DUELO FINAL", 3, 3, 0);
+    } else {
+        draw_text_transformed(w / 2, h * 0.12, "O DUELO VAI COMECAR", 3, 3, 0);
+    }
+    draw_text(w / 2, h * 0.20, "Quando o ponteiro bater MEIO-DIA, clique com o botao ESQUERDO do mouse!");
 }
 else if (estado == 1) {
     draw_set_color(c_white);
@@ -72,11 +90,21 @@ else if (estado == 2) {
     draw_text_transformed(w / 2, h * 0.12, "ATIRE!", 6, 6, 0);
 }
 else if (estado == 3) {
-    draw_set_color(c_lime);
-    draw_text_transformed(w / 2, h * 0.12, "VOCE ATIROU PRIMEIRO", 3, 3, 0);
-    draw_set_color(c_white);
-    draw_text(w / 2, h * 0.22, "Reflexo: " + string_format(tempo_reacao, 1, 2) + " s");
-    draw_text(w / 2, h * 0.28, "Aperte ENTER para continuar");
+    if (eh_final) {
+        if (t_final < 70) {
+            draw_set_color(c_lime);
+            draw_text_transformed(w / 2, h * 0.12, "VOCE ATIROU PRIMEIRO", 3, 3, 0);
+        } else {
+            draw_set_color(c_white);
+            draw_text_transformed(w / 2, h * 0.12, "MAS ELE TAMBEM ATIROU...", 3, 3, 0);
+        }
+    } else {
+        draw_set_color(c_lime);
+        draw_text_transformed(w / 2, h * 0.12, "VOCE ATIROU PRIMEIRO", 3, 3, 0);
+        draw_set_color(c_white);
+        draw_text(w / 2, h * 0.22, "Reflexo: " + string_format(tempo_reacao, 1, 2) + " s");
+        draw_text(w / 2, h * 0.28, "Aperte ENTER para continuar");
+    }
 }
 else {
     draw_set_color(c_red);
@@ -87,6 +115,14 @@ else {
     }
     draw_set_color(c_white);
     draw_text(w / 2, h * 0.22, "Aperte Q para tentar o duelo de novo");
+}
+
+// ---------- FADE PARA PRETO (final do duelo final) ----------
+if (escuro > 0) {
+    draw_set_alpha(escuro);
+    draw_set_color(c_black);
+    draw_rectangle(0, 0, w, h, false);
+    draw_set_alpha(1);
 }
 
 draw_set_halign(fa_left);

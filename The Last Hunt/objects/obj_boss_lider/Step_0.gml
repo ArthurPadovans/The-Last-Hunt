@@ -1,3 +1,16 @@
+// ---------- DERROTADO: fica parado e depois vai para o duelo final ----------
+if (derrotado) {
+    image_blend = c_gray;
+    contador_fim -= 1;
+    if (contador_fim <= 0) {
+        global.duelo_final = true;    // avisa a sala do duelo que é o duelo final
+        global.duelo_nivel = 3;       // o mais difícil
+        global.sala_depois = sala_flashback;   // provisório: depois vai para o flashback
+        room_goto(sala_duelo);
+    }
+    exit;
+}
+
 // Fase da luta: muda conforme a vida cai
 var nova_fase = 1;
 if (vida <= vida_max * 2 / 3) {

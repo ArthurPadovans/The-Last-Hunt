@@ -2,9 +2,9 @@
   "$GMSprite":"v2",
   "%Name":"spr_botao_jogar",
   "bboxMode":0,
-  "bbox_bottom":13,
-  "bbox_left":1,
-  "bbox_right":61,
+  "bbox_bottom":14,
+  "bbox_left":6,
+  "bbox_right":59,
   "bbox_top":1,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"f64c5d10-2a85-49e3-9c49-6781cf04aa7f","name":"f64c5d10-2a85-49e3-9c49-6781cf04aa7f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"v1","%Name":"0d2024c8-bea4-4c86-b5f4-425af9bb15a5","name":"0d2024c8-bea4-4c86-b5f4-425af9bb15a5","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"74bd9cb3-631f-4007-bace-2737091df0c0","name":"74bd9cb3-631f-4007-bace-2737091df0c0","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"3419c636-8170-4a15-9a41-50602c95ec2d","name":"3419c636-8170-4a15-9a41-50602c95ec2d","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -70,11 +70,11 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"f64c5d10-2a85-49e3-9c49-6781cf04aa7f","path":"sprites/spr_botao_jogar/spr_botao_jogar.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"41b4c04a-4efa-4d3c-b6d0-379b909fddd7","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"74bd9cb3-631f-4007-bace-2737091df0c0","path":"sprites/spr_botao_jogar/spr_botao_jogar.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"a19c91c1-2b27-45c6-b877-ee2ec41662ba","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"0d2024c8-bea4-4c86-b5f4-425af9bb15a5","path":"sprites/spr_botao_jogar/spr_botao_jogar.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"45de6ee1-0194-4104-8dab-ce62877f8cf2","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"3419c636-8170-4a15-9a41-50602c95ec2d","path":"sprites/spr_botao_jogar/spr_botao_jogar.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"83805cc1-4ced-468d-ba80-efa316ff08df","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

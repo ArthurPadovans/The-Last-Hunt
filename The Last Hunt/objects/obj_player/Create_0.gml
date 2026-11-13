@@ -1,4 +1,4 @@
-velocidade = 4.5;
+velocidade = 5.5;
 
 arma = 2;   // arma na mão: 0 = revolver, 1 = espingarda, 2 = faca
 nome_arma = ["Revolver", "Espingarda", "Faca"];

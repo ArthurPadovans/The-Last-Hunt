@@ -5,7 +5,7 @@ view_enabled = false;   // esta sala não usa a câmera que segue o jogador
 titulo = "ALGUNS MESES DEPOIS";
 subtitulo = "Um saloon, em algum lugar do Oeste";
 
-var gangue = "Abutres";
+var gangue = "Red Jays";
 
 falas = [
     ["povo", "Voce ja ouviu a historia do homem que derrubou os " + gangue + " sozinho?"],

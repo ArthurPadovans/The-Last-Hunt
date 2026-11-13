@@ -2,8 +2,8 @@
   "$GMSprite":"v2",
   "%Name":"spr_rosto_medico",
   "bboxMode":0,
-  "bbox_bottom":55,
-  "bbox_left":6,
+  "bbox_bottom":63,
+  "bbox_left":9,
   "bbox_right":58,
   "bbox_top":1,
   "collisionKind":1,
@@ -12,14 +12,14 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"5a14be58-1942-4bbc-8f69-d55fd8b6fc91","name":"5a14be58-1942-4bbc-8f69-d55fd8b6fc91","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"b765fd9b-5932-4f77-b524-1698d7a771e1","name":"b765fd9b-5932-4f77-b524-1698d7a771e1","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":64,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"fd07e5ea-73ed-4e66-86b8-ffe931301998","blendMode":0,"displayName":"default","isLocked":false,"name":"fd07e5ea-73ed-4e66-86b8-ffe931301998","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"79f460c4-db1e-4ffb-b9da-703080d82cb3","blendMode":0,"displayName":"default","isLocked":false,"name":"79f460c4-db1e-4ffb-b9da-703080d82cb3","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_rosto_medico",
   "nineSlice":null,
@@ -69,8 +69,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"5a14be58-1942-4bbc-8f69-d55fd8b6fc91","path":"sprites/spr_rosto_medico/spr_rosto_medico.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"0dfd1e9b-51e2-4521-8e05-898425612733","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"b765fd9b-5932-4f77-b524-1698d7a771e1","path":"sprites/spr_rosto_medico/spr_rosto_medico.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"f6ea2260-4350-46c3-88e3-541a29f89fb2","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

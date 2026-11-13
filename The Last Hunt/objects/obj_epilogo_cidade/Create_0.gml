@@ -12,4 +12,4 @@ falas = [
     ["povo", "Historias, claro. Mas ninguem por aqui esqueceu o nome dele."]
 ];
 
-proxima_sala = sala_menu;   // provisório: depois vai para o site
+proxima_sala = sala_site;   // provisório: depois vai para o site

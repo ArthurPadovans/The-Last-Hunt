@@ -1,7 +1,7 @@
 event_inherited();   // pega as configurações padrão do obj_dialogo
 
 // ---------- NOMES (troque aqui, se quiser) ----------
-var gangue = "Abutres";
+var gangue = "Red Jays";
 var lider = "Silas Mercer";
 
 falas = [

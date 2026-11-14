@@ -173,3 +173,13 @@ if (ataque_frame > 0) {
         ataque_frame = 0;  // acabou: volta ao quadro parado
     }
 }
+
+// Recarrega sozinho quando a munição acaba (a faca não usa munição)
+if (municao <= 0 && arma != 2 && !recarregando) {
+    recarregando = true;
+    if (arma == 0) {
+        tempo_recarga = 90;    // revolver: 1,5 segundo
+    } else {
+        tempo_recarga = 120;   // espingarda: 2 segundos
+    }
+}

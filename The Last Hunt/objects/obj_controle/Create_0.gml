@@ -27,9 +27,11 @@ balanco_forca = 2.5;   // quantos graus ela gira para cada lado (0 = sem balanç
 balanco_vel = 2500;    // maior = balança mais devagar
 
 // ---------- FUNDO DE FORA DO MAPA ----------
-// Esconde o fundo preto padrão da sala e coloca o degradê colorido no lugar
 var bg = layer_get_id("Background");
 if (layer_exists(bg)) {
     layer_set_visible(bg, false);
 }
 instance_create_depth(0, 0, 20000, obj_fundo_externo);
+
+// ---------- ENTRADA: a tela clareia a partir do preto ----------
+instance_create_depth(0, 0, -5000, obj_fade_entrada);

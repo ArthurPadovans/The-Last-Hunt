@@ -10,7 +10,7 @@ if (instance_exists(obj_player)) {
 if (ve_jogador) {
     // Acabou de notar o jogador: demora um pouquinho para reagir
     if (estado == 0) {
-        recarga = max(recarga, 30);
+                recarga = max(recarga, tempo_reacao);
     }
     estado = 1;
     tempo_perdido = 0;

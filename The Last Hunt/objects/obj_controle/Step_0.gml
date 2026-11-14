@@ -3,8 +3,9 @@ if (estado_jogo == 0) {
     if (!instance_exists(obj_player)) {
         estado_jogo = 1;   // jogador morreu
     }
-    else if (instance_number(obj_inimigo) == 0 && instance_number(obj_boss) == 0) {
-        estado_jogo = 2;   // não sobrou ninguém
+    // Só vence aqui se for o último andar (o que não tem escada)
+    else if (instance_number(obj_inimigo) == 0 && instance_number(obj_boss) == 0 && !instance_exists(obj_escada)) {
+        estado_jogo = 2;
     }
 }
 

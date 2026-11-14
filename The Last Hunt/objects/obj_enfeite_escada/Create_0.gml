@@ -1,0 +1,1 @@
+depth = 20;   // fica atrás do jogador, para ele aparecer "saindo" da escada

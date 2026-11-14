@@ -1,9 +1,15 @@
-velocidade = 5.5;
+velocidade = 4.5;
 
 arma = 2;   // arma na mão: 0 = revolver, 1 = espingarda, 2 = faca
 nome_arma = ["Revolver", "Espingarda", "Faca"];
 max_municao = [6, 2, 0];   // capacidade de cada arma
 municao = max_municao[arma];   // munição da arma que está na mão
+
+// Se veio de outro andar, continua com a arma e a munição que tinha
+if (variable_global_exists("arma_levada") && global.arma_levada >= 0) {
+    arma = global.arma_levada;
+    municao = global.municao_levada;
+}
 
 recarregando = false;
 tempo_recarga = 0;

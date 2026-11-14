@@ -1,3 +1,7 @@
+// Acabou a fase: a próxima começa de novo sem arma levada
+global.arma_levada = -1;
+global.municao_levada = 0;
+
 view_enabled = false;   // esta sala não usa a câmera que segue o jogador
 
 // Se você abrir esta sala direto para testar, essas variáveis ainda não existem

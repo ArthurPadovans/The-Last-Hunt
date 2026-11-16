@@ -1,0 +1,1 @@
+depth = 10;   // fica atrás do jogador e das balas (as balas passam "por cima")

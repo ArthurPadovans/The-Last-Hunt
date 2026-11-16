@@ -1,3 +1,32 @@
+// ---------- ATORDOADO: caído no chão, sem ver nem atirar ----------
+if (atordoado > 0) {
+    atordoado -= 1;
+    image_blend = c_gray;
+
+    // Desliza um pouco com o empurrão, sem atravessar parede
+    if (!place_meeting(x + emp_x, y, obj_parede)) {
+        x += emp_x;
+    }
+    if (!place_meeting(x, y + emp_y, obj_parede)) {
+        y += emp_y;
+    }
+    emp_x *= 0.85;
+    emp_y *= 0.85;
+
+    // Acordou: já vem atrás do jogador, mas sem atirar na hora
+    if (atordoado <= 0) {
+        image_blend = c_white;
+        estado = 1;
+        tempo_perdido = 0;
+        recarga = max(recarga, tempo_reacao);
+        if (instance_exists(obj_player)) {
+            ult_x = obj_player.x;
+            ult_y = obj_player.y;
+        }
+    }
+    exit;   // enquanto está caído, ignora todo o resto do evento
+}
+
 // Ele vê o jogador? (perto e sem parede no meio)
 var ve_jogador = false;
 
@@ -61,7 +90,7 @@ else {
     var py = lengthdir_y(velocidade * 0.6, direcao);
 
     // Bateu na parede? Vira para outro lado
-    if (place_meeting(x + px, y + py, obj_parede)) {
+        if (place_meeting(x + px, y + py, obj_parede) || place_meeting(x + px, y + py, obj_movel)) {
         direcao = (direcao + choose(90, 180, 270)) mod 360;
     } else {
         x += px;

@@ -95,6 +95,7 @@
     {"id":{"name":"obj_seta","path":"objects/obj_seta/obj_seta.yy",},},
     {"id":{"name":"obj_site","path":"objects/obj_site/obj_site.yy",},},
     {"id":{"name":"obj_tapete","path":"objects/obj_tapete/obj_tapete.yy",},},
+    {"id":{"name":"obj_testefodase","path":"objects/obj_testefodase/obj_testefodase.yy",},},
     {"id":{"name":"obj_titulo_cena","path":"objects/obj_titulo_cena/obj_titulo_cena.yy",},},
     {"id":{"name":"obj_titulo_flashback","path":"objects/obj_titulo_flashback/obj_titulo_flashback.yy",},},
     {"id":{"name":"sala_abertura","path":"rooms/sala_abertura/sala_abertura.yy",},},

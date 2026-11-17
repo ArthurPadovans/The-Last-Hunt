@@ -66,3 +66,4 @@ anim_i = 0;   // o que o inimigo está fazendo: 0 = parado, 1 = sacando e atiran
 anim_j = 0;   // o mesmo, para você
 fi = 0;       // quadro atual do inimigo
 fj = 0;       // quadro atual seu
+tocar_musica(mus_duelo);    // <- NOVA

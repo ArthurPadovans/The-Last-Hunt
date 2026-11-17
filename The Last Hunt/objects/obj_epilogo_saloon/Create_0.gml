@@ -16,3 +16,5 @@ falas = [
 ];
 
 proxima_sala = sala_epilogo_acampamento;
+
+tocar_musica(mus_cena, 0.4);    // <- NOVA

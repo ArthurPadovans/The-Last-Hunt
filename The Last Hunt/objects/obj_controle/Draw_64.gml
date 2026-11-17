@@ -1,3 +1,9 @@
+// ---------- MENU DE PAUSA ----------
+if (pausado) {
+    pausa_desenhar();
+    exit;
+}
+
 var w = display_get_gui_width();
 var h = display_get_gui_height();
 

@@ -1,3 +1,27 @@
+// ---------- CARTÃO DE CAPÍTULO: congela o jogo enquanto ele aparece ----------
+if (cartao_ativo) {
+    if (!cartao_congelou) {
+        instance_deactivate_all(true);
+        instance_activate_object(obj_titulo_cena);
+        cartao_congelou = true;
+    }
+    else if (!instance_exists(obj_titulo_cena) || obj_titulo_cena.tempo > 170) {
+        instance_activate_all();
+        cartao_ativo = false;
+    }
+    exit;
+}
+
+// ---------- PAUSA (Esc) ----------
+if (pausado) {
+    pausa_atualizar();
+    exit;
+}
+if (keyboard_check_pressed(vk_escape)) {
+    pausa_iniciar();
+    exit;
+}
+
 // Enquanto está jogando, verifica se morreu ou venceu
 if (estado_jogo == 0) {
     if (!instance_exists(obj_player)) {

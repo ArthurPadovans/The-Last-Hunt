@@ -13,3 +13,5 @@ falas = [
 ];
 
 proxima_sala = sala_site;   // provisório: depois vai para o site
+
+tocar_musica(mus_cena, 0.4);    // <- NOVA

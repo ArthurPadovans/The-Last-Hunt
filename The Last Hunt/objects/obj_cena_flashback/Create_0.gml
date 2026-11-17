@@ -27,3 +27,5 @@ falas = [
 ];
 
 proxima_sala = sala_epilogo_saloon;   // provisório: depois vai para o epílogo
+
+tocar_musica(mus_cena, 0.4);    // <- NOVA

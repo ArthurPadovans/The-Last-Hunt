@@ -18,3 +18,4 @@ with (obj_player) {
 }
 
 tremer(14);
+tocar_som(snd_explosao, 10);    // <- NOVA

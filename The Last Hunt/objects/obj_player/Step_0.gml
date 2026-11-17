@@ -28,6 +28,7 @@ if (keyboard_check_pressed(ord("E")) && !recarregando) {
         var novo_tipo = item.tipo;
         var nova_municao = item.municao_arma;
         instance_destroy(item);
+		tocar_som(snd_pegar_arma, 6);    // <- NOVA
 
         // Solta a arma que estava na mão, com a munição que sobrou
         var largada = instance_create_layer(x, y, "Instances", tipos_no_chao[arma]);
@@ -42,6 +43,7 @@ if (keyboard_check_pressed(ord("E")) && !recarregando) {
 // Começar a recarregar com R (a faca não recarrega)
 if (keyboard_check_pressed(ord("R")) && !recarregando && arma != 2 && municao < max_municao[arma]) {
     recarregando = true;
+	 tocar_som(snd_recarga, 6);
     if (arma == 0) {
         tempo_recarga = 90;    // revolver: 1,5 segundo
     } else {
@@ -52,6 +54,9 @@ if (keyboard_check_pressed(ord("R")) && !recarregando && arma != 2 && municao < 
 // Contar o tempo da recarga
 if (recarregando) {
     tempo_recarga -= 1;
+	  if (tempo_recarga mod 20 == 0) {    // <- NOVA
+        tocar_som(snd_recarga, 6);      // <- NOVA
+    }                                   // <- NOVA
     if (tempo_recarga <= 0) {
         municao = max_municao[arma];
         recarregando = false;
@@ -68,6 +73,7 @@ if (mouse_check_button_pressed(mb_left) && !recarregando && cooldown <= 0) {
         bala.image_angle = image_angle;
         bala.speed = 12;
         municao -= 1;
+		tocar_som(snd_revolver, 7);
         tremer(2);
         cooldown = 10;
     }
@@ -82,6 +88,7 @@ if (mouse_check_button_pressed(mb_left) && !recarregando && cooldown <= 0) {
             projetil.vida = 25;
         }
         municao -= 1;
+		tocar_som(snd_espingarda, 7);
         tremer(6);
         cooldown = 35;
     }
@@ -98,18 +105,28 @@ if (mouse_check_button_pressed(mb_left) && !recarregando && cooldown <= 0) {
             y += ly;
         }
 
-        // Acerta todos os inimigos dentro da área (menos os que estão atrás de parede)
+               // Acerta todos os inimigos dentro da área (menos os que estão atrás de parede)
         var fx = x + lengthdir_x(alcance_faca, image_angle);
         var fy = y + lengthdir_y(alcance_faca, image_angle);
+        var acertou = false;                              // <- NOVA (1)
         with (obj_inimigo) {
             if (point_distance(x, y, fx, fy) < raio_faca) {
                 if (!collision_line(other.x, other.y, x, y, obj_parede, false, true)) {
                     efeito_morte(x, y, other.image_angle, sprite_index);
                     pontuar(x, y, 150);
                     instance_destroy();
+                    acertou = true;                       // <- NOVA (2)
                 }
             }
         }
+
+        // Som do golpe: um se acertou, outro se errou
+        if (acertou) {                                    // <- NOVA (3)
+            tocar_som(snd_faca_acerta, 8);
+        } else {
+            tocar_som(snd_faca_erra, 7);
+        }
+
 
         // O corte em arco na tela
         var corte = instance_create_layer(x, y, "Instances", obj_corte);
@@ -177,6 +194,7 @@ if (ataque_frame > 0) {
 // Recarrega sozinho quando a munição acaba (a faca não usa munição)
 if (municao <= 0 && arma != 2 && !recarregando) {
     recarregando = true;
+	 tocar_som(snd_recarga, 6);
     if (arma == 0) {
         tempo_recarga = 90;    // revolver: 1,5 segundo
     } else {

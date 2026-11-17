@@ -26,3 +26,5 @@ falas = [
 ];
 
 proxima_sala = noone;   // depois da cena, vai para a próxima sala da Ordem das salas
+
+tocar_musica(mus_abertura, 0.4);    // <- NOVA

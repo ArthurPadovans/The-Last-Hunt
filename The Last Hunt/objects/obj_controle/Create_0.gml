@@ -1,3 +1,5 @@
+pausado = false;    // o menu de pausa está aberto?
+
 estado_jogo = 0;   // 0 = jogando, 1 = morreu, 2 = venceu
 
 // ---------- PONTOS ----------
@@ -35,3 +37,55 @@ instance_create_depth(0, 0, 20000, obj_fundo_externo);
 
 // ---------- ENTRADA: a tela clareia a partir do preto ----------
 instance_create_depth(0, 0, -5000, obj_fade_entrada);
+
+// ---------- CARTÃO DE CAPÍTULO (tela preta com o nome da fase) ----------
+cartao_ativo = false;      // o cartão está na tela?
+cartao_congelou = false;   // o jogo já foi congelado por ele?
+
+if (!variable_global_exists("capitulo_visto")) {
+    global.capitulo_visto = -1;
+}
+
+var cap = "";
+var nome_fase = "";
+switch (room) {
+    case Sala_fase1:
+        cap = "CAPÍTULO 1";
+        nome_fase = "Velho Saloon";
+        break;
+    case Sala_fase2:
+        cap = "CAPÍTULO 2";
+        nome_fase = "Minas Abandonadas";
+        break;
+    case Sala_fase3:
+        cap = "CAPÍTULO 3";
+        nome_fase = "Mansão Red Jays";
+        break;
+}
+
+// Só mostra na primeira vez que chega na fase (não de novo ao reiniciar com Q)
+if (cap != "" && global.capitulo_visto != room) {
+    global.capitulo_visto = room;
+    instance_destroy(obj_fade_entrada);    // o cartão já faz a tela clarear sozinho
+    var cartao = instance_create_depth(0, 0, -6000, obj_titulo_cena);
+    cartao.texto = cap;
+    cartao.subtitulo = nome_fase;
+    cartao_ativo = true;
+}
+
+// ---------- MÚSICA DA FASE ----------
+switch (room) {
+    case Sala_fase1:
+    case Sala_fase1b:
+        tocar_musica(mus_fase1);
+        break;
+    case Sala_fase2:
+    case Sala_fase2b:
+    case Sala_fase2c:
+        tocar_musica(mus_fase2);    // <- NOVA
+        break;
+    case Sala_fase3:
+    case Sala_fase3b:
+        tocar_musica(mus_fase3);    // <- NOVA
+        break;
+}

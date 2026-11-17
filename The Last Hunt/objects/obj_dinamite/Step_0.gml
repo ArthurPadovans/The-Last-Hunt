@@ -5,6 +5,7 @@ if (!pousou) {
         x = alvo_x;
         y = alvo_y;
         pousou = true;
+        tocar_som(snd_pavio, 5);    // <- NOVA
     } else {
         var ang = point_direction(x, y, alvo_x, alvo_y);
         x += lengthdir_x(velocidade_d, ang);

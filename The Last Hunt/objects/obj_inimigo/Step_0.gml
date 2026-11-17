@@ -65,12 +65,13 @@ if (estado == 1) {
         }
     }
 
-    // Atira
+        // Atira
     if (ve_jogador && recarga <= 0) {
         var bala = instance_create_layer(x, y, "Instances", obj_bala_inimiga);
         bala.direction = image_angle;
         bala.image_angle = image_angle;
         bala.speed = 6;
+        tocar_som(snd_revolver, 3, 0.6);    // <- NOVA
         recarga = 60;
     }
 

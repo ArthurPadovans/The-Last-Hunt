@@ -17,3 +17,5 @@ falas = [
 ];
 
 proxima_sala = sala_epilogo_cidade;
+
+tocar_musica(mus_cena, 0.4);    // <- NOVA

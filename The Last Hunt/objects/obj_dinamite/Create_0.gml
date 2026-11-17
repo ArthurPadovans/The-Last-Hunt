@@ -3,3 +3,4 @@ alvo_y = y;
 velocidade_d = 5;
 pavio = 60;        // tempo entre pousar e explodir (60 = 1 segundo)
 pousou = false;
+tocar_som(snd_dinamite_lancar, 5);    // <- NOVA

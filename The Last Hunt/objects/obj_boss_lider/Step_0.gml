@@ -79,6 +79,7 @@ if (ve_jogador) {
             tiro.direction = ang + random_range(-6, 6);
             tiro.image_angle = tiro.direction;
             tiro.speed = 7;
+            tocar_som(snd_revolver, 5, 0.8);    // <- NOVA
             rajada -= 1;
             tempo_rajada = 8;
             if (rajada <= 0) {

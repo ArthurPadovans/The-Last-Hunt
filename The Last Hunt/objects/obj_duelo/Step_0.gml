@@ -106,32 +106,34 @@ if (sac > 0.3) {
 
 // ---------- ANIMAÇÃO DOS PERSONAGENS ----------
 if (estado >= 3) {
+	if (t_pos == 0) { parar_musica(); }
     t_pos += 1;
 }
 
 // Você ganhou (duelo comum): você atira e o inimigo cai
 if (estado == 3 && !eh_final) {
-    if (t_pos == 1) { anim_j = 1; }
+    if (t_pos == 1) { anim_j = 1; tocar_som(snd_revolver, 10); }
     if (t_pos == 16) { anim_i = 2; }
 }
 // Duelo final: você atira, o líder ferido saca e atira também, os dois caem
 if (estado == 3 && eh_final) {
-    if (t_pos == 1) { anim_j = 1; }
-    if (t_pos == 45) { anim_i = 1; }
+    if (t_pos == 1) { anim_j = 1; tocar_som(snd_revolver, 10); }
+    if (t_pos == 45) { anim_i = 1; tocar_som(snd_revolver, 10); }
     if (t_pos == 66) { anim_j = 2; }
     if (t_pos == 95) { anim_i = 2; }
 }
 // Atirou cedo demais: você atira, o inimigo responde e você cai
 if (estado == 4) {
-    if (t_pos == 1) { anim_j = 1; }
-    if (t_pos == 16) { anim_i = 1; }
+    if (t_pos == 1) { anim_j = 1; tocar_som(snd_revolver, 10); }
+    if (t_pos == 16) { anim_i = 1; tocar_som(snd_revolver, 10); }
     if (t_pos == 36) { anim_j = 2; }
 }
 // Muito lento: o inimigo saca e você cai
 if (estado == 5) {
-    if (t_pos == 1) { anim_i = 1; }
+    if (t_pos == 1) { anim_i = 1; tocar_som(snd_revolver, 10); }
     if (t_pos == 20) { anim_j = 2; }
 }
+
 
 // Avança os quadros de cada um
 fi = duelo_anim(anim_i, fi, q_parado, q_saca, q_cai, vel_parado, vel_saca, vel_cai);

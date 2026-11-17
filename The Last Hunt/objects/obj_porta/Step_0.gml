@@ -59,8 +59,10 @@ if (ator != noone) {
 
     if (derrubou) {
         tremer(6);
+		tocar_som(snd_porta_batida, 6);    // <- NOVA
     } else {
         tremer(2);
+		tocar_som(snd_porta, 4);    // <- NOVA
     }
 
     instance_destroy();

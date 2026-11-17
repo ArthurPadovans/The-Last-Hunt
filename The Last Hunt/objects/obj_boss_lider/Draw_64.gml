@@ -14,6 +14,6 @@ if (acordou) {
     // Nome do chefe
     draw_set_color(c_white);
     draw_set_halign(fa_center);
-    draw_text(w / 2, 66, "O LIDER DA GANGUE");
+    draw_text(w / 2, 66, "O LÍDER DA GANGUE");
     draw_set_halign(fa_left);
 }

@@ -44,7 +44,7 @@ draw_line_width(0, topo, w, topo, 3);
 draw_line_width(0, base, w, base, 3);
 
 // ---------- DICA DE PULAR ----------
-draw_text_transformed(w * 0.05, h * 0.08, "SEGURE O BOTAO DIREITO PARA PULAR", 1, 1, 0);
+draw_text_transformed(w * 0.05, h * 0.08, "SEGURE O BOTÃO DIREITO PARA PULAR", 1, 1, 0);
 draw_rectangle(w * 0.05, h * 0.115, w * 0.05 + 200 * (pular / 40), h * 0.115 + 4, false);
 
 // ---------- O TEXTO, COM SOMBRA NA COR DE QUEM FALA ----------

@@ -36,7 +36,7 @@ if (estado_jogo != 0) {
 
     if (estado_jogo == 1) {
         draw_set_color(c_red);
-        draw_text_transformed(w / 2, h / 2 - 40, "VOCE MORREU", 4, 4, 0);
+        draw_text_transformed(w / 2, h / 2 - 40, "VOCÊ MORREU", 4, 4, 0);
         draw_set_color(c_white);
         draw_text(w / 2, h / 2 + 40, "Aperte Q para tentar de novo");
     } else {

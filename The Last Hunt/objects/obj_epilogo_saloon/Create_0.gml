@@ -8,11 +8,11 @@ subtitulo = "Um saloon, em algum lugar do Oeste";
 var gangue = "Red Jays";
 
 falas = [
-    ["povo", "Voce ja ouviu a historia do homem que derrubou os " + gangue + " sozinho?"],
-    ["povo", "Charles Logan? Dizem que ele foi atras deles sabendo que talvez nao voltasse."],
+    ["povo", "Você já ouviu a história do homem que derrubou os " + gangue + " sozinho?"],
+    ["povo", "Charles Logan? Dizem que ele foi atrás deles sabendo que talvez não voltasse."],
     ["povo", "Ouvi dizer que ele nem queria o dinheiro da recompensa."],
-    ["povo", "E queria o que, entao?"],
-    ["povo", "Ninguem sabe. Mas olha so: ele se foi, e aqui estamos nos, falando dele."]
+    ["povo", "E queria o quê, então?"],
+    ["povo", "Ninguém sabe. Mas olha só: ele se foi, e aqui estamos nós, falando dele."]
 ];
 
 proxima_sala = sala_epilogo_acampamento;

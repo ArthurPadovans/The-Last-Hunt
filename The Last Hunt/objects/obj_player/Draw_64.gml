@@ -6,7 +6,7 @@ if (arma != 2) {
     if (recarregando) {
         draw_text(20, 45, "Recarregando...");
     } else {
-        draw_text(20, 45, "Municao: " + string(municao) + "/" + string(max_municao[arma]));
+        draw_text(20, 45, "Munição: " + string(municao) + "/" + string(max_municao[arma]));
     }
 }
 

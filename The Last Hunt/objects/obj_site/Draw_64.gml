@@ -36,7 +36,7 @@ draw_rectangle(0, 90, w, 150, false);
 draw_set_color(make_color_rgb(244, 232, 205));
 draw_text_transformed(80, 120, "LENDAS DO OESTE", 2, 2, 0);
 draw_set_halign(fa_right);
-draw_text_transformed(w - 80, 120, "Inicio      Personagens      Gangues      Mapas", 1.2, 1.2, 0);
+draw_text_transformed(w - 80, 120, "Início      Personagens      Gangues      Mapas", 1.2, 1.2, 0);
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
 
@@ -77,12 +77,12 @@ draw_set_halign(fa_left);
 
 // ---------- COMENTARIOS ----------
 draw_set_color(make_color_rgb(40, 30, 25));
-draw_text_transformed(860, 505, "Comentarios (1.204)", 1.6, 1.6, 0);
+draw_text_transformed(860, 505, "Comentários (1.204)", 1.6, 1.6, 0);
 
 draw_set_color(make_color_rgb(130, 95, 60));
 draw_text_transformed(860, 545, "ana_do_texas", 1.2, 1.2, 0);
 draw_set_color(make_color_rgb(55, 45, 40));
-draw_text_ext_transformed(860, 568, "Meu bisavo contava essa historia para a gente dormir.", -1, 340 / 1.2, 1.2, 1.2, 0);
+draw_text_ext_transformed(860, 568, "Meu bisavô contava essa história para a gente dormir.", -1, 340 / 1.2, 1.2, 1.2, 0);
 
 draw_set_color(make_color_rgb(130, 95, 60));
 draw_text_transformed(860, 625, "joao_p", 1.2, 1.2, 0);

@@ -53,23 +53,17 @@ else if (estado == 2) {
 // 3 = você ganhou
 else if (estado == 3) {
     if (eh_final) {
-        // ---------- DUELO FINAL: o líder cai, mas Charles também é atingido ----------
+        // ---------- DUELO FINAL: o líder, ferido, também atira ----------
         t_final += 1;
 
-        // O líder cai logo depois do seu tiro
-        if (t_final > 10) {
-            queda_inimigo = min(1, queda_inimigo + 0.04);
-        }
-
         // O tiro do líder acerta: clarão vermelho e tremida forte
-        if (t_final == 70) {
+        if (t_final == 62) {
             flash = 1;
             flash_cor = c_red;
             sac = 20;
         }
-        if (t_final > 70) {
+        if (t_final > 62) {
             vermelho = min(0.55, vermelho + 0.01);
-            queda_jogador = min(1, queda_jogador + 0.02);
         }
 
         // A tela vai escurecendo
@@ -84,8 +78,8 @@ else if (estado == 3) {
             room_goto(global.sala_depois);
         }
     } else {
-        // Duelo comum: Enter continua
-        if (keyboard_check_pressed(vk_enter)) {
+        // Duelo comum: Enter continua (depois da animação da queda)
+        if (t_pos > 40 && keyboard_check_pressed(vk_enter)) {
             if (global.sala_depois == sala_menu) {
                 global.duelo_nivel = 0;   // acabou o jogo: o próximo começa do zero
             }
@@ -93,9 +87,9 @@ else if (estado == 3) {
         }
     }
 }
-// 4 e 5 = você perdeu
+// 4 e 5 = você perdeu (Q tenta de novo, depois da animação)
 else {
-    if (keyboard_check_pressed(ord("Q"))) {
+    if (t_pos > 70 && keyboard_check_pressed(ord("Q"))) {
         room_restart();
     }
 }
@@ -109,3 +103,36 @@ if (sac > 0.3) {
 } else {
     sac = 0;
 }
+
+// ---------- ANIMAÇÃO DOS PERSONAGENS ----------
+if (estado >= 3) {
+    t_pos += 1;
+}
+
+// Você ganhou (duelo comum): você atira e o inimigo cai
+if (estado == 3 && !eh_final) {
+    if (t_pos == 1) { anim_j = 1; }
+    if (t_pos == 16) { anim_i = 2; }
+}
+// Duelo final: você atira, o líder ferido saca e atira também, os dois caem
+if (estado == 3 && eh_final) {
+    if (t_pos == 1) { anim_j = 1; }
+    if (t_pos == 45) { anim_i = 1; }
+    if (t_pos == 66) { anim_j = 2; }
+    if (t_pos == 95) { anim_i = 2; }
+}
+// Atirou cedo demais: você atira, o inimigo responde e você cai
+if (estado == 4) {
+    if (t_pos == 1) { anim_j = 1; }
+    if (t_pos == 16) { anim_i = 1; }
+    if (t_pos == 36) { anim_j = 2; }
+}
+// Muito lento: o inimigo saca e você cai
+if (estado == 5) {
+    if (t_pos == 1) { anim_i = 1; }
+    if (t_pos == 20) { anim_j = 2; }
+}
+
+// Avança os quadros de cada um
+fi = duelo_anim(anim_i, fi, q_parado, q_saca, q_cai, vel_parado, vel_saca, vel_cai);
+fj = duelo_anim(anim_j, fj, q_parado, q_saca, q_cai, vel_parado, vel_saca, vel_cai);

@@ -1,5 +1,6 @@
 // Avança um passo da animação de um personagem do duelo e devolve o quadro novo.
 // _modo: 0 = parado (repete), 1 = sacar e atirar (toca uma vez), 2 = cair (toca uma vez)
+// Se _cai[0] for negativo, não há quadros de queda: o personagem mantém a pose em que estava.
 function duelo_anim(_modo, _f, _parado, _saca, _cai, _v_parado, _v_saca, _v_cai) {
     if (_modo == 0) {
         _f += _v_parado;
@@ -11,7 +12,8 @@ function duelo_anim(_modo, _f, _parado, _saca, _cai, _v_parado, _v_saca, _v_cai)
             _f = _saca[0];
         }
         _f = min(_f + _v_saca, _saca[1]);   // no último quadro, fica parado
-    } else {
+    } else if (_cai[0] >= 0) {
+        // Com quadros de queda desenhados, toca eles
         if (_f < _cai[0]) {
             _f = _cai[0];
         }

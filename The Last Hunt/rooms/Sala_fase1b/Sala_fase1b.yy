@@ -114,6 +114,7 @@
     {"name":"inst_2AA75966","path":"rooms/Sala_fase1b/Sala_fase1b.yy",},
     {"name":"inst_23A9A4C6","path":"rooms/Sala_fase1b/Sala_fase1b.yy",},
     {"name":"inst_10DDAFB","path":"rooms/Sala_fase1b/Sala_fase1b.yy",},
+    {"name":"inst_67E25CF3","path":"rooms/Sala_fase1b/Sala_fase1b.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -226,6 +227,7 @@
         {"$GMRInstance":"v4","%Name":"inst_2AA75966","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2AA75966","objectId":{"name":"obj_cadeira_saloon","path":"objects/obj_cadeira_saloon/obj_cadeira_saloon.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":181.05974,"scaleX":1.0,"scaleY":1.0,"x":832.0,"y":1376.0,},
         {"$GMRInstance":"v4","%Name":"inst_23A9A4C6","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_23A9A4C6","objectId":{"name":"obj_cadeira_saloon","path":"objects/obj_cadeira_saloon/obj_cadeira_saloon.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":181.05974,"scaleX":1.0,"scaleY":1.0,"x":896.0,"y":1376.0,},
         {"$GMRInstance":"v4","%Name":"inst_10DDAFB","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_10DDAFB","objectId":{"name":"obj_cadeira_saloon","path":"objects/obj_cadeira_saloon/obj_cadeira_saloon.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":181.05974,"scaleX":1.0,"scaleY":1.0,"x":960.0,"y":1376.0,},
+        {"$GMRInstance":"v4","%Name":"inst_67E25CF3","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_67E25CF3","objectId":{"name":"obj_boss_laco","path":"objects/obj_boss_laco/obj_boss_laco.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2016.0,"y":736.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"tl_chao2","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"tl_chao2","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":45,"SerialiseWidth":80,"TileCompressedData":[
           -486,-2147483648,-72,3,-8,-2147483648,2,1,0,-22,1,1,0,-29,1,1,0,-7,1,1,0,-4,1,1,0,-4,1,-8,-2147483648,

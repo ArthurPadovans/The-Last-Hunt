@@ -1,8 +1,18 @@
-// 0 = o duelo vai começar
+// 0 = tela de instruções: espera o jogador clicar para começar
 if (estado == 0) {
-    espera -= 1;
-    if (espera <= 0) {
-        estado = 1;
+    if (!comecou) {
+        // Uma pequena trava, para um clique sem querer da tela anterior não pular as instruções
+        if (espera > 0) {
+            espera -= 1;
+        } else if (mouse_check_button_pressed(mb_left)) {
+            comecou = true;
+            espera = 60;    // 1 segundo de "prepare-se" antes de o ponteiro andar
+        }
+    } else {
+        espera -= 1;
+        if (espera <= 0) {
+            estado = 1;
+        }
     }
 }
 // 1 = o ponteiro anda
@@ -138,3 +148,20 @@ if (estado == 5) {
 // Avança os quadros de cada um
 fi = duelo_anim(anim_i, fi, q_parado, q_saca, q_cai, vel_parado, vel_saca, vel_cai);
 fj = duelo_anim(anim_j, fj, q_parado, q_saca, q_cai, vel_parado, vel_saca, vel_cai);
+
+
+// A queda por código: o personagem vai tombando devagar
+if (anim_i == 2) {
+    qi = min(1, qi + 0.04);
+}
+if (anim_j == 2) {
+    qj = min(1, qj + 0.04);
+}
+
+// Quem já atirou passa a usar o sprite "atirando" (e continua com ele durante a queda)
+if (anim_i == 1) {
+    atirou_i = true;
+}
+if (anim_j == 1) {
+    atirou_j = true;
+}

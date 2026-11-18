@@ -6,7 +6,7 @@ titulo = "MUITOS ANOS DEPOIS";
 subtitulo = "Uma cidade qualquer";
 
 falas = [
-    ["povo", "Você sabe por que essa rua se chama Charles Logan?"],
+    ["povo2", "Você sabe por que essa rua se chama Charles Logan?"],
     ["povo", "Dizem que foi um caçador que morreu depois de derrubar uma gangue inteira."],
     ["povo", "Dizem também que, quando o vento sopra do deserto, dá para ouvir uma tosse ao longe."],
     ["povo", "Histórias, claro. Mas ninguém por aqui esqueceu o nome dele."]

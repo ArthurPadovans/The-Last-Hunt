@@ -9,9 +9,9 @@ var gangue = "Red Jays";
 
 falas = [
     ["povo", "Você já ouviu a história do homem que derrubou os " + gangue + " sozinho?"],
-    ["povo", "Charles Logan? Dizem que ele foi atrás deles sabendo que talvez não voltasse."],
+    ["povo2", "Charles Logan? Dizem que ele foi atrás deles sabendo que talvez não voltasse."],
     ["povo", "Ouvi dizer que ele nem queria o dinheiro da recompensa."],
-    ["povo", "E queria o quê, então?"],
+    ["povo2", "E queria o quê, então?"],
     ["povo", "Ninguém sabe. Mas olha só: ele se foi, e aqui estamos nós, falando dele."]
 ];
 

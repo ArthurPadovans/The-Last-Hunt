@@ -22,7 +22,9 @@ personagens = {
     medico:  { rosto: spr_rosto_medico,  cor: make_color_rgb(80, 130, 120) },
     xerife:  { rosto: spr_rosto_xerife,  cor: make_color_rgb(200, 150, 50) },
     povo:    { rosto: spr_rosto_povo,    cor: make_color_rgb(150, 100, 70) },
-    velho:   { rosto: spr_rosto_velho,   cor: make_color_rgb(120, 110, 150) }
+	povo2:   { rosto: spr_rosto_povo2,   cor: make_color_rgb(140, 120, 80) },
+    velho:   { rosto: spr_rosto_velho,   cor: make_color_rgb(120, 110, 150) },
+	crianca: { rosto: spr_rosto_crianca, cor: make_color_rgb(170, 120, 90) }
 };
 
 // Cor da sombra que fica atrás do texto

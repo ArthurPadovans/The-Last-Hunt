@@ -8,9 +8,19 @@ var oy = random_range(-sac, sac);
 // ---------- CENÁRIO ----------
 draw_sprite_stretched(spr_duelo_fundo, 0, -40 + ox, -40 + oy, w + 80, h + 80);
 
-// O inimigo, de frente, e você, de costas, na frente (cada um no seu quadro da animação)
-draw_sprite_ext(spr_duelo_inimigo, floor(fi), w * pos_inimigo_x + ox, h * pos_inimigo_y + oy, esc_inimigo, esc_inimigo, 0, c_white, 1);
-draw_sprite_ext(spr_duelo_jogador, floor(fj), w * pos_jogador_x + ox, h * pos_jogador_y + oy, esc_jogador, esc_jogador, 0, c_white, 1);
+// Cada um usa o sprite "parado" ou, depois de atirar, o sprite "atirando".
+// Quem foi atingido tomba e escurece um pouco.
+var spr_i = sprite_inimigo;
+if (atirou_i) {
+    spr_i = sprite_inimigo_tiro;
+}
+var spr_j = spr_duelo_jogador;
+if (atirou_j) {
+    spr_j = spr_duelo_jogador_atirando;
+}
+
+draw_sprite_ext(spr_i, 0, w * pos_inimigo_x + ox, h * pos_inimigo_y + oy, esc_inimigo, esc_inimigo, -queda_giro * qi, merge_color(c_white, c_gray, qi * 0.5), 1);
+draw_sprite_ext(spr_j, 0, w * pos_jogador_x + ox, h * pos_jogador_y + oy, esc_jogador, esc_jogador, queda_giro * qj, merge_color(c_white, c_gray, qj * 0.5), 1);
 
 // ---------- RELÓGIO, NO CANTO DIREITO ----------
 var cx = w - 190;
@@ -66,13 +76,54 @@ draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 
 if (estado == 0) {
-    draw_set_color(c_white);
-    if (eh_final) {
-        draw_text_transformed(w / 2, h * 0.12, "O DUELO FINAL", 3, 3, 0);
+    if (!comecou) {
+        // As instruções completas só aparecem no primeiro duelo
+        var mostra_tudo = (nivel == 1 && !eh_final);
+        var y_convite = h * 0.18;
+
+        if (mostra_tudo) {
+            y_convite = h * 0.32;
+
+            // Fundo escuro, só na parte de cima (para não cobrir o relógio)
+            draw_set_alpha(0.6);
+            draw_set_color(c_black);
+            draw_rectangle(w * 0.03, h * 0.03, w * 0.97, h * 0.265, false);
+            draw_set_alpha(1);
+
+            draw_set_color(c_white);
+            draw_text_transformed(w / 2, h * 0.07, "O DUELO", 3.5, 3.5, 0);
+            draw_text_transformed(w / 2, h * 0.135, "1. O ponteiro do relógio vai começar a andar.", 1.8, 1.8, 0);
+            draw_text_transformed(w / 2, h * 0.185, "2. Quando ele bater MEIO-DIA, clique com o botão ESQUERDO.", 1.8, 1.8, 0);
+            draw_text_transformed(w / 2, h * 0.235, "3. Clicar antes da hora, ou demorar demais, é fatal.", 1.8, 1.8, 0);
+        } else {
+            // Nos outros duelos, só o título
+            draw_set_alpha(0.6);
+            draw_set_color(c_black);
+            draw_rectangle(w * 0.30, h * 0.03, w * 0.70, h * 0.12, false);
+            draw_set_alpha(1);
+
+            draw_set_color(c_white);
+            if (eh_final) {
+                draw_text_transformed(w / 2, h * 0.075, "O DUELO FINAL", 3.5, 3.5, 0);
+            } else {
+                draw_text_transformed(w / 2, h * 0.075, "O DUELO", 3.5, 3.5, 0);
+            }
+        }
+
+        // Convite para começar (pisca), com um fundo escuro para ler bem
+        if (espera <= 0 && (current_time div 500) mod 2 == 0) {
+            draw_set_alpha(0.6);
+            draw_set_color(c_black);
+            draw_rectangle(w * 0.25, y_convite - h * 0.04, w * 0.75, y_convite + h * 0.04, false);
+            draw_set_alpha(1);
+
+            draw_set_color(c_yellow);
+            draw_text_transformed(w / 2, y_convite, "Clique com o botão ESQUERDO para começar", 2, 2, 0);
+        }
     } else {
-        draw_text_transformed(w / 2, h * 0.12, "O DUELO VAI COMEÇAR", 3, 3, 0);
+        draw_set_color(c_white);
+        draw_text_transformed(w / 2, h * 0.12, "PREPARE-SE...", 3.5, 3.5, 0);
     }
-    draw_text(w / 2, h * 0.20, "Quando o ponteiro bater MEIO-DIA, clique com o botão ESQUERDO do mouse!");
 }
 else if (estado == 1) {
     draw_set_color(c_white);

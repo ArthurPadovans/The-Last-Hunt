@@ -11,19 +11,20 @@ var h = display_get_gui_height();
 draw_set_halign(fa_right);
 draw_set_valign(fa_top);
 draw_set_color(c_white);
-draw_text_transformed(w - 20, 20, string(pontos) + " pts", 2, 2, 0);
+draw_text_transformed(w - 20, 20, string(pontos) + " pts", 3, 3, 0);
 
 if (combo > 1) {
     // Quanto maior o combo, mais vermelho e maior fica
     var cor = merge_color(c_yellow, c_red, clamp(combo / 10, 0, 1));
-    var escala = 2 + min(combo, 10) * 0.15;
+    var escala = 3 + min(combo, 10) * 0.15;
+    var y_combo = 20 + string_height("A") * 3 + 8;    // logo abaixo dos pontos
 
     draw_set_color(cor);
-    draw_text_transformed(w - 20, 60, "COMBO x" + string(combo), escala, escala, 0);
+    draw_text_transformed(w - 20, y_combo, "COMBO x" + string(combo), escala, escala, 0);
 
     // Barra do tempo que resta para manter o combo
-    var by = 60 + string_height("A") * escala + 6;
-    draw_rectangle(w - 20 - 200 * (combo_tempo / 180), by, w - 20, by + 6, false);
+    var by = y_combo + string_height("A") * escala + 6;
+    draw_rectangle(w - 20 - 260 * (combo_tempo / 180), by, w - 20, by + 8, false);
 }
 
 draw_set_halign(fa_left);

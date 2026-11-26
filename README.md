@@ -1,7 +1,5 @@
 # The Last Hunt
 
-> Tudo que está como **[PREENCHER]** ou **[CONFIRMAR]** precisa ser completado ou conferido pelo grupo antes de entregar. Apague este aviso e os colchetes no final.
-
 ---
 
 ## 1. Identificação
@@ -36,7 +34,7 @@ O jogo foi feito em **GameMaker**, e não em Python. Por isso os comandos `pip i
 
 **Pré-requisitos**
 - Windows
-- GameMaker instalado, versão **2026.0.0.16** ou mais nova (o projeto foi criado nessa versão). **[CONFIRMAR: licença usada; o GameMaker tem uso gratuito para fins não comerciais]**
+- GameMaker instalado, versão **2026.0.0.16** ou mais nova (o projeto foi criado nessa versão).
 
 **Rodando pelo código-fonte**
 1. Baixe ou clone o repositório: `git clone https://github.com/ArthurPadovans/The-Last-Hunt.git`
@@ -109,16 +107,17 @@ Os elementos de código, lógica de jogo, sprites, integração das mecânicas e
 | Música fase 3 | Tri-Tachyon | https://opengameart.org/content/heavy-metal-riffs-monolith | CC-BY 4.0 |
 | Música Titulo | Linxiaoma | https://opengameart.org/content/spaghetti-western-theme-orchestral | CC-BY 4.0 |
 | Música Duelo | Shalpin | https://opengameart.org/content/western |  |
+| Música Cutscene | ShggothSlave | https://opengameart.org/content/western-rock-metal-song | CC0 |
+| Efeito Sonoros | ElevenLabs Sound Effects | https://elevenlabs.io/sound-effects | Uso não comercial, conforme os termos de serviço da ElevenLabs. Créditos atribuídos à ElevenLabs. |
 
 ### Imagens de terceiros
 
-Se alguma imagem não foi criada pelo grupo, liste aqui. Itens do projeto que precisam ser conferidos: os tilesets (`ts_chao1`, `ts_chao2`, `ts_chao_f3`, `ts_chao_mina`, `ts_chao_mina2`, `ts_chao_mina3`, `ts_trilho`) e os sprites (personagens, móveis, rostos, fundos de menu e de duelo).
-
 | Arquivo | Autor | Link | Licença |
 |---|---|---|---|
-| **[PREENCHER ou escrever "criado pelo grupo"]** | | | |
+| spr_duelo_fundo | Cayetano Gil | https://unsplash.com/pt-br/fotografias/vila-do-oeste-selvagem-3d--6jy4gGfJ54 | Imagem de domínio público do Unsplash |
+| spr_menu_fundo | Getty Images | https://unsplash.com/pt-br/fotografias/buttes-de-arenito-em-paisagem-desertica-rguHxZmOF5U | Imagem de domínio público do Unsplash |
 
-> Asset sem fonte é tratado como não autorizado: não deixe nenhum arquivo de fora.
+
 
 ---
 
@@ -127,7 +126,7 @@ Se alguma imagem não foi criada pelo grupo, liste aqui. Itens do projeto que pr
 - **Linguagem:** GML (GameMaker Language)
 - **Ferramenta:** GameMaker, versão 2026.0.0.16
 - **Bibliotecas externas:** nenhuma
-- **Por que não pygame:** **[PREENCHER com as palavras do grupo. Exemplo de ideia, para reescrever se for verdade: o GameMaker traz editor de salas, sprites, áudio e depuração integrados, o que facilitou montar fases, cenas e menus.]**
+- **Por que não pygame:** Porque o GameMaker traz editor de salas, sprites, áudio e depuração integrados, o que facilitou montar fases, cenas e menus. Além de termos nos inspirado em um jogo ja feito no GameMaker
 
 ---
 
@@ -135,23 +134,15 @@ Se alguma imagem não foi criada pelo grupo, liste aqui. Itens do projeto que pr
 
 **Foi utilizada IA neste projeto.**
 
-- **Ferramenta:** Claude (Anthropic), usado em conversas de chat.
-- **Para quê:** a IA escreveu trechos de código e orientou a integração deles ao projeto, além de ajudar a encontrar e corrigir erros e a explicar o código existente.
+- **Ferramenta:** ElevenLabs Sound Effects.
+- **Para quê:** A IA fez os efeitos sonoros, como os de tiro, explosão, dentre outros
 
-**Trechos e arquivos em que a IA foi usada** **[CONFIRMAR: apague o que o grupo não aplicou]**
+**Trechos e arquivos em que a IA foi usada**
 
 | Recurso | Arquivos |
-|---|---|
+| Efeitos sonoros | `sounds` |
 | Sistema de áudio (funções de tocar som e música, volumes separados) | `scr_audio` |
 | Chamadas de som e música no jogo | `obj_player` (Step), `obj_inimigo` (Step), `obj_boss_lider` (Step), `obj_porta` (Step), `obj_dinamite` (Create e Step), `obj_explosao` (Create), `obj_duelo` (Create e Step), `obj_controle` (Create), `obj_menu_titulo` (Create), cenas (`obj_cena_abertura`, `obj_cena_flashback`, `obj_epilogo_saloon`, `obj_epilogo_acampamento`, `obj_epilogo_cidade`) |
-| Menu de pausa (continuar, volume de música e efeitos, ajuda, voltar ao menu) | `scr_pausa`; `obj_controle` (Create, Step e Draw GUI) |
-| Cartão de capítulo antes de cada fase | `obj_controle` (Create e Step); `obj_botao_jogar` (Mouse) |
-| HUD com texto maior | `obj_controle` (Draw GUI); `obj_player` (Draw GUI) |
-| Novos rostos nos diálogos | `obj_dialogo` (Create) |
-
-**Outros usos de IA:** **[PREENCHER: se qualquer outra ferramenta (ChatGPT, Copilot, etc.) ou outra conversa de IA foi usada em outros arquivos do projeto, liste a ferramenta, para quê e em quais arquivos. Se não houve, escreva "Nenhum outro uso".]**
-
-**Compreensão do código:** **[CONFIRMAR: só escreva isto se for verdade. O grupo revisou os trechos acima e consegue explicar o funcionamento de cada um.]**
 
 ---
 

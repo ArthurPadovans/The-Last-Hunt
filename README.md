@@ -149,7 +149,7 @@ Os elementos de código, lógica de jogo, sprites, integração das mecânicas e
 ## 10. Capturas de tela
 
 
-![Tela de título](docs/capturas/titulo.png)
+![Tela de título](docs/capturas/Captura%20de%20tela%202026-11-25%20155710.png)
 
-![Fase em andamento](docs/capturas/fase.png)
+![Fase em andamento](docs/capturas/Captura%20de%20tela%202026-11-25%20155758.png)
 

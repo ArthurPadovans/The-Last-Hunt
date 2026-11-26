@@ -30,6 +30,9 @@ The Last Hunt é um jogo de ação 2D com visão de cima, no estilo de Hotline M
 
 ## 3. Como rodar
 
+**Rodando o executável**
+O executável do jogo esta no arquivo .zip
+
 O jogo foi feito em **GameMaker**, e não em Python. Por isso os comandos `pip install -r requirements.txt` e `python main.py` não se aplicam: não há dependências externas a instalar.
 
 **Pré-requisitos**
@@ -41,9 +44,6 @@ O jogo foi feito em **GameMaker**, e não em Python. Por isso os comandos `pip i
 2. Abra o GameMaker e escolha **Open**.
 3. Selecione o arquivo `The Last Hunt/The Last Hunt.yyp`.
 4. Aperte **F5** (Run) para jogar.
-
-**Rodando o executável**
-O executável do jogo esta no arquivo .zip
 
 ---
 
@@ -106,7 +106,7 @@ Os elementos de código, lógica de jogo, sprites, integração das mecânicas e
 | Música fase 2 | Fato_Shadow_music | https://opengameart.org/content/fight-theme-metal | CC-BY 3.0 |
 | Música fase 3 | Tri-Tachyon | https://opengameart.org/content/heavy-metal-riffs-monolith | CC-BY 4.0 |
 | Música Titulo | Linxiaoma | https://opengameart.org/content/spaghetti-western-theme-orchestral | CC-BY 4.0 |
-| Música Duelo | Shalpin | https://opengameart.org/content/western |  |
+| Música Duelo | Shalpin | https://opengameart.org/content/western | CC-BY 3.0 |
 | Música Cutscene | ShggothSlave | https://opengameart.org/content/western-rock-metal-song | CC0 |
 | Efeito Sonoros | ElevenLabs Sound Effects | https://elevenlabs.io/sound-effects | Uso não comercial, conforme os termos de serviço da ElevenLabs. Créditos atribuídos à ElevenLabs. |
 
@@ -148,10 +148,8 @@ Os elementos de código, lógica de jogo, sprites, integração das mecânicas e
 
 ## 10. Capturas de tela
 
-**[PREENCHER: coloque pelo menos 2 imagens do jogo rodando na pasta `docs/capturas/` do repositório e ajuste os nomes abaixo.]**
 
 ![Tela de título](docs/capturas/titulo.png)
 
 ![Fase em andamento](docs/capturas/fase.png)
 
-![Duelo](docs/capturas/duelo.png)
